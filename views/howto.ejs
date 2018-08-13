@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <%include template/head%>
+        <link rel="stylesheet" type="text/css" href="/css/howto.css">
+    </head>
+    <header>
+        <%if(user){%>
+            <%include template/headerlogout%>
+        <%}else{%>
+            <%include template/headerlogin%>
+        <%}%>
+        <title>How to use Bookmark</title>
+    </header>
+    <body>
+        <div class="jumbotron">
+            <h1>How to use Bookmark</h1>
+            <a href="#demo"><button class="btn btn-primary">사용 설명 보기</button></a>
+        </div>
+        
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/public/images/galaxy.jpg" class="images" width="1100" height="500" alt="Los Angeles">
+              <div class="carousel-caption">
+                <h3>즐겨찾기 조회</h3>
+                <p>페이스북으로 로그인 후 즐겨찾기 조회 버튼 클릭</p>
+              </div>   
+            </div>
+            <div class="carousel-item">
+              <img src="/public/images/cloud.jpg" class="images" width="1100" height="500" alt="Chicago">
+              <div class="carousel-caption">
+                <h3>즐겨찾기 추가</h3>
+                <p>페이스북으로 로그인 후 즐겨찾기 추가 버튼 클릭</p>
+                <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+                  <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+                  <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+                  <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+                  <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+                  <p>추가 하려는 사이트 주소, 즐겨찾기 이름, 이미지를 빠짐없이 입력 후 추가 버튼 클릭</p>
+              </div>   
+            </div>
+            <div class="carousel-item">
+              <img src="/public/images/moon.jpg" class="images" width="1100" height="500" alt="New York">
+              <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+              </div>   
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+        <footer>
+            <%include template/footer%>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <%include forheader%>
+    <script type="text/javascript">
+    $(window).on('scroll',function(){
+        if($(window).scrollTop()){
+            $('nav').addClass('black');
+        }else{
+            $('nav').removeClass('black');
+        }
+    })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="/auth/facebook" class="btn btn-primary" id="loginbtn">페이스북으로 로그인</a>
+        <nav>
+            <div class="logo"><a href="/">즐겨찾기</a></div>
+            <ul>
+                
+                <li><a href="/process/mainbookmark" class="fornav">Main</a></li>
+                <!--<li><a href="/process/siteview" class="fornav">즐겨찾기 조회</a></li>
+                <li><a href="/process/addbookmark" class="fornav">즐겨찾기 추가</a></li>-->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">...</a>
+                    <div class="dropdown-content">
+                    <a href="/process/about">About</a>
+                    <a href="/process/howto">How to use</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+
+        <section class="sec1"></section>
+    </div>
+</body>
+</html>

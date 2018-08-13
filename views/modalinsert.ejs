@@ -1,0 +1,51 @@
+<div class="modal fade" id="insertModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog form-dark" role="document">
+        <!--Content-->
+        <div class="modal-content card card-image">
+            <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                <!--Header-->
+                <div class="modal-header text-center pb-4">
+                    <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>즐겨찾기 추가</strong></h3>
+                    <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <!--Body-->
+                    <form method="post" enctype="multipart/form-data" action="/process/bookmarkinsert">
+                        <div class="md-form pb-3">
+                            <input type="input" id="insertfolder" name="folderName" class="form-control validate" placeholder="폴더 입력" value="">
+                            <label data-error="wrong" data-success="right" for="folderselect">폴더 이름</label>
+                        </div>
+                        <div class="md-form pb-3">
+                            <input type="input" id="insertname" name="bookmarkName" class="form-control validate" placeholder="이름 입력">
+                            <label data-error="wrong" data-success="right" for="nameupdate">즐겨찾기 이름</label>
+                        </div>
+
+                        <div class="md-form pb-3">
+                            <input type="input" id="inserturl" name="bookmarkUrl" class="form-control validate" placeholder="URL 입력" value="">
+                            <label data-error="wrong" data-success="right" for="urlupdate">URL</label>
+                        </div>
+                        
+                        <div class="md-form pb-3">
+                            <div class="fileBoxinsert">
+                                <input type="hidden" class="fileNameinsert" readonly="readonly" id="uploadInput" required placeholder="Site Image">
+                                <label for="uploadBtninsert" class="btn btn-secondary">이미지 찾아보기</label>
+                                <input type="file" id="uploadBtninsert" class="uploadBtninsert" name="bookmarkImg">
+                            </div>
+                        </div>
+                        
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center mb-4">
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <input type="submit" class="btn btn-primary btn-block btn-rounded z-depth-1" value="추가하기">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

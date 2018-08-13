@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>즐겨찾기 추가</title>
+	</head>
+<body>
+	<h1>즐겨찾기 추가</h1>
+	<br>
+	<form method="post" enctype="multipart/form-data" action="/process/bookmark">
+        <div>
+            <table>
+                <tr>
+                    <th>사이트 주소</th><th>명칭</th><th>대표 이미지</th>
+                </tr>
+                <tr>
+                    <td><input type="input" name="bookmarkUrl"/></td>
+                    <td><input type="input" name="bookmarkName"/></td>
+                    <td><input type="file" name="bookmarkImg" /></td>
+                </tr>
+            </table>
+            <input type="submit" value="추가" name="submit"/>
+        </div>
+	</form>
+    <hr>
+    <form method="post" action="/process/siteview">
+        <input type="submit" value="즐겨찾기 보기" name=submit2/>
+    </form>
+</body>
+</html>

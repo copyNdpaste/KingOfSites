@@ -1,0 +1,126 @@
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100px;
+    padding:15px 80px;
+    box-sizing:border-box;
+    transition:.3s;
+    z-index:2;
+}
+nav.black{
+    background:rgba(0,0,0,0.8);
+    height:80px;
+    padding:10px 100px;
+}
+.logo{
+    padding:15px 20px 15px 20px;
+    height:60px;
+    float:left;
+    font-size:24px;
+    transition:.3s;
+    color:white;
+}
+
+.logo a:hover{
+    background-color:#001330;
+    text-decoration: none;
+    color:white;
+}
+
+.logo:hover{
+    background-color:#001330;
+}
+nav ul{
+    list-style:none;
+    float:right;
+    margin:0;
+    padding:0;
+    display:flex;
+}
+nav ul li{
+    list-style:none;
+}
+nav ul li a{
+    line-height:60px;
+    color:white;
+    padding:0px 15px;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:.3s;
+}
+ul>li>a:hover{
+    background-color:#001330;
+}
+.black a, .black a:visited, .black a:active, .black a:link, nav > div > a, .fornav:hover{
+    text-decoration:none;
+    color:white;
+}
+nav.black ul li a{
+    color:#fff;
+}
+nav ul li a:focus{
+    outline:none;
+}
+nav ul li a.active{
+    background:#E2472F;
+    color:#fff;
+    border-radius:6px;
+}
+section.sec1{
+    width:100%;
+    height:100vh;
+    background-image:url("/public/images/earth.png");
+    background-size:cover;
+    background-position:center;
+}
+#loginbtn{
+    z-index: 3;
+}
+li {
+    float: left;
+}
+
+li a, .dropbtn, .dropdown {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #001330;
+    text-decoration: none;
+    color:white;
+}
+
+li.dropdown {
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: midnightblue}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.jumbotron{
+    margin:0 0 0 0;
+}

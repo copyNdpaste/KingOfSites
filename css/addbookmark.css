@@ -1,0 +1,15 @@
+.fileBox .fileName {display:inline-block;width:190px;height:30px;padding-left:10px;margin-right:5px;line-height:30px;border:1px solid #aaa;background-color:#fff;vertical-align:middle}
+.fileBoxinsert .fileNameinsert {display:inline-block;width:190px;height:30px;padding-left:10px;margin-right:5px;line-height:30px;border:1px solid #aaa;background-color:#fff;vertical-align:middle}
+.fileBox .btn btn-secondary {display:inline-block;border:1px solid #000;width:100px;height:30px;font-size:0.8em;line-height:30px;text-align:center;vertical-align:middle}
+.fileBoxinsert .btn btn-secondary {display:inline-block;border:1px solid #000;width:100px;height:30px;font-size:0.8em;line-height:30px;text-align:center;vertical-align:middle}
+#btn-view{margin:2px 50%;}
+.table table-striped .fileBox input[type="file"] {position:absolute;width:0px;height:0px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+.table{text-align: center}
+#uploadBtn {display:none;}
+#uploadBtninsert {display:none;}
+#loginbtn{position:absolute;right:0;}
+
+.container{
+    max-width:80%;
+    margin:30px auto 30px auto;
+}

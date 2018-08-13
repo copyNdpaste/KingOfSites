@@ -1,0 +1,11 @@
+.card{
+    width:90%;
+    float:none;
+    margin:10px auto;
+}
+.container{
+    max-width:80%;
+    margin:30px auto 30px auto;
+    position:relative;
+}
+.btn-rounded{margin:2px auto}

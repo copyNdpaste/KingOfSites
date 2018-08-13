@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <%include template/head%>
+        <link type="text/css" rel="stylesheet" href="/css/mysite.css">
+        <link type="text/css" rel="stylesheet" href="/css/modal.css">
+    </head>
+    <header>
+        <%if(user){%>
+            <%include template/headerlogout%>
+        <%}else{%>
+            <%include template/headerlogin%>
+        <%}%>
+    </header>
+    <body>
+        <div class="container">
+            <h1>사이트 추가 실패</h1>
+            <p class="text-left">
+                즐겨찾기 수정을 위해 <p class="bg-danger"><b>삭제하려는 즐겨찾기 이름</b></p>과 <p class="bg-danger"><b>사이트 URL, 즐겨찾기 이름, 이미지</b></p>를 정확히 입력하세요
+            </p>
+        </div>
+        <footer>
+            <%include template/footer%>
+        </footer>
+    </body>
+</html>
