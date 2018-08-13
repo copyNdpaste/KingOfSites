@@ -36,8 +36,6 @@ var upload=multer({
 route_loader.init = function(app, router) {
 	console.log('route_loader.init 호출됨.');
 	initRoutes(app, router);
-    //app.use('/uploads',static(path.join(__dirname,'uplaods')));
-    
 };
 
 // config파일의 route_info에 정의된 라우팅 정보 처리
@@ -76,4 +74,3 @@ function initRoutes(app, router) {
 }
 
 module.exports = route_loader;
-

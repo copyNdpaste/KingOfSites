@@ -8,11 +8,9 @@ var mainbookmark=function(req,res){//네비에서 mainbookmark 클릭되면 main
     // 인증 안된 경우
     if (!req.user) {
         console.log('사용자 인증 안된 상태임.');
-        //res.render('index.ejs', {login_success:false});
         res.render('index.ejs', {login_success:false,user:req.user});
     } else {
         console.log('사용자 인증된 상태임.');
-        //폴더 찾는 ajax... 해서 rendering 시 폴더 값들 넘기기.
         console.log('distinct 호출');
         
         database.FolderModel.distinct("foldername",function(err,folders){
@@ -43,7 +41,6 @@ var findsites=function(req,res){
         console.log('sites',sites);
         if(sites.length>0){//폴더,사이트 있음
             console.log('sites 찾음');
-            //res.render('ajaxtest.ejs',{sites:sites});
         }else{
             console.log('아무 것도 못찾음'); //DB에 값 없을 때 출력
         }
@@ -84,46 +81,20 @@ var createfolder=function(req, res) {
                     /*폴더 추가 후 폴더 검색하고 출력*/
                     database.FolderModel.distinct("foldername",function(err,folders){
                         if(folders.length>0){//폴더 있음
-                            //res.render('index.ejs');
                             console.log('folders:',folders);
                             database.FolderModel.find({},function(err,sites){
                                 if(sites.length>0){//폴더,사이트 있음
                                     console.log('sites:',sites);
-                                    //res.render('index.ejs');
-                                    //res.redirect('/views/ajaxtest.ejs');
                                     res.render('mainbookmark.ejs', {login_success:true,user:req.user,folders:folders,sites:sites});
-                                    //res.render('ajaxtest.ejs',{sites:sites});
                                 }else{
                                     console.log('아무 것도 못찾음'); //DB에 값 없을 때 출력
                                 }
                             });
-                            ////////////////////////////////
-                            //res.render('ajaxtest.ejs', {login_success:true,user:req.user,folders:folders,sites:sites});
                         }else{
                             console.log('폴더 못찾음'); //DB에 값 없을 때 출력
                             res.render('mainbookmark.ejs',{login_success:true,user:req.user});
                         }
                     });
-                    /*database.FolderModel.find({/userid:paramId},function(err,results){
-                        if(err){
-                            //callback(err,null);
-                            console.log('db에 데이터 없음');
-                            return;
-                        }
-                        if(results.length>0){
-                            console.log('폴더 찾음, 찾은 폴더 수: ',results.length);
-                            console.log('폴더 명:',results);
-                            //res.send({results:results,user:req.user});//찾은 폴더 ajax client에 넘겨주기
-                            //res.send({results:results,user:req.user});//찾은 폴더 ajax client에 넘겨주기
-                            res.render('ajaxtest',{folders:results,user:req.user});
-                            //callback(null,results);
-                        }else{
-                            console.log('폴더 못찾음'); //DB에 값 없을 때 출력
-                            //callback(null,null);
-                        }
-                    });*/
-                    //res.send({result:result,user:req.user});//res.render하면 새로고침 됨. ajax를 호출한 클라이언트로 객체 넘겨줌.
-                    //res.render('ajaxtext',{user:req.user});
                 }else{
                     res.writeHead('200',{'Content-Type':'text/html;charset=utf8'});
                     res.write('<h2>폴더 추가 실패</h2>');
@@ -166,37 +137,6 @@ var findfolder=function(req,res){
         }
     });
 };
-
-/*var findsites=function(req,res){
-    var database=req.app.get('database');
-    console.log('findsites 호출됨');
-    database.FolderModel.aggregate([
-    {
-        $group : {
-            _id : {
-                foldername:"$foldername",
-                total:{$sum:1},
-                bmname:{$max:"$bmname"},
-                bmurl:{$max:"$bmurl"},
-                bmimage:{$max:"$bmimage"},
-                date:{$max:"$date"}
-            }
-        }
-    },
-    {
-        $project : {
-            bmname:1,
-            total:1
-        }
-    }],function(err,sites){
-        console.log('sites',sites);
-        if(sites){//sites 있음
-            res.render('ajaxtest',{sites:sites});
-        }else{
-            console.log('sites 못찾음'); //DB에 값 없을 때 출력
-        }
-    });
-};*/
 
 module.exports.mainbookmark=mainbookmark;
 module.exports.createfolder=createfolder;

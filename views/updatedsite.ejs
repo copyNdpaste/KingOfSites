@@ -25,12 +25,12 @@
                             <h4 class="card-title"><%=results.bmname%></h4>
                             <p class="card-text">여기에 사용자가 작성한 "사이트에 대한 설명"이 들어감</p>
                             <div class="btn-group">
-                                <a href="<%=results.bmurl%>" class="btn btn-primary btn-rounded" id="<%=results.bmurl%>">Enter</a>                  
+                                <a href="<%=results.bmurl%>" class="btn btn-primary btn-rounded" id="<%=results.bmurl%>">Enter</a>
                                 <button data-target="#adjustModalForm" class="btn btn-info btn-rounded foradjustmodal" data-toggle="modal" data-folder="<%=results.foldername%>" data-name="<%=results.bmname%>" data-url="<%=results.bmurl%>" data-image="<%=results.bmimage%>">Adjust</button>
                                 <form action="/process/del" method="post">
                                     <input type="hidden" value="<%=results.foldername%>" name="fname"/>
                                     <input type="hidden" value="<%=results.bmname%>" name="sname"/>
-                                    <button class="btn btn-secondary" type="submit" data-folder="<%=results.foldername%>" data-name="<%=results.bmname%>" data-url="<%=results.bmurl%>" data-image="<%=results.bmimage%>">Del</button><!--현재 폴더 정보 넘겨서 버튼만 누르면 삭제되게 하기.-->
+                                    <button class="btn btn-secondary" type="submit" data-folder="<%=results.foldername%>" data-name="<%=results.bmname%>" data-url="<%=results.bmurl%>" data-image="<%=results.bmimage%>">Del</button>
                                 </form>
                                 
                             </div>
