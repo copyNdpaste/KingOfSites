@@ -33,10 +33,17 @@ var siteinsert=function(req, res){
         var paramName=req.body.bookmarkName;//수정하기 위해 선택된 즐겨찾기 이름
         var user=req.user.facebook.email;
         var file=req.files; //요청된 파일
+        var imgpath;
         console.log('url: ',paramUrl,'folder: ',paramFolderName,'name: ',paramName,'id: ',user);
         console.log('file정보: ');
-        console.log(file);
-        var imgpath=file[0].path; //업로드할 이미지 경로
+        console.log(file.length);
+        if(file.length!=0){
+            console.log('file not empty');
+            imgpath=file[0].path; //업로드할 이미지 경로
+        }else{
+            console.log('file empty');
+            imgpath='empty';
+        }
         if(database){
             insertBookmark(database,paramUrl,paramFolderName,paramName,imgpath,user,function(err,results){
                 if(err) throw err;
