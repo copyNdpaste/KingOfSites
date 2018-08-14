@@ -9,9 +9,11 @@ module.exports = {
 	db_schemas: [
 	    {file:'./user_schema', collection:'users6', schemaName:'UserSchema', modelName:'UserModel'},
         //{file:'./bookmark_schema',collection:'bookmark1',schemaName:'BookmarkSchema',modelName:'BookmarkModel'},
-        {file:'./folder_schema',collection:'folders',schemaName:'FolderSchema',modelName:'FolderModel'}
+        {file:'./folder_schema',collection:'folders',schemaName:'FolderSchema',modelName:'FolderModel'},
+        {file:'./recommend_schema',collection:'recommendsites',schemaName:'RecommendSchema',modelName:'RecommendModel'}
 	],
     //file:실행파일 path:route경로 method:함수이름 type:get or post #get, post 잘못 쓰면 인식 못함
+    //nav 페이지 이동은 type:'get'으로.
 	route_info: [
         {file:'./bookmark',path:'/process/bookmarkadding',method:'images',type:'post'},//in a bookmark.js,req.body.bookmarkUrl;이런식으로 받으므로 type:post
         {file:'./bookmarkinsert',path:'/process/bookmarkinsert',method:'siteinsert',type:'post'},
@@ -26,6 +28,10 @@ module.exports = {
         {file:'./mainbookmark',path:'/process/createfolder',method:'createfolder',type:'post'},
         
         {file:'./deletefolder',path:'/process/deletefolder',method:'deletefolder',type:'post'},
+        
+        {file:'./recommend',path:'/process/recsites',method:'showrec',type:'get'},
+        
+        {file:'./getjob',path:'/process/sites',method:'getjob',type:'get'}
 	],
 	facebook: {		// passport facebook
 		clientID: '196604394366966',

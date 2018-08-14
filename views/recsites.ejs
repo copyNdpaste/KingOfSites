@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <%include template/head%>
+        <link href="/css/sitenav.css" type="text/css" rel="stylesheet">
+    </head>
+    <header>
+        <%if(user){%>
+            <%include template/headerlogout%>
+        <%}else{%>
+            <%include template/headerlogin%>
+        <%}%>
+
+        <title>즐겨찾기</title>
+    </header>
+    <body>
+        <div class="container">
+            <h1>Category</h1>
+            <%include template/sitenav%>
+        </div>
+        
+        <footer>
+            <%include template/footer%>
+        </footer>
+    </body>
+</html>

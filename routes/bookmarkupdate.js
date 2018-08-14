@@ -37,20 +37,18 @@ var siteupdate=function(req, res) {
         var paramName=req.body.bookmarkName; //이 이름으로 수정됨
         var paramUpdateName=req.body.updateName;//수정하기 위해 선택된 즐겨찾기 이름
         var user=req.user.facebook.email;
-
+        var file=req.files; //요청된 파일
+        var imgpath;
         console.log('폴더명:'+paramFolder+'변경 전 즐겨찾기:'+paramUpdateName+', '+'변경 후:'+paramUrl+', '+paramName);
 
-        var file=req.files; //요청된 파일
-        if(!file){
-            console.log('파일 없음');
+        if(file.length!=0){
+            console.log('file not empty');
+            imgpath=file[0].path; //업로드할 이미지 경로
         }else{
-            console.log('file정보:');
-            console.log(file);
+            console.log('file empty');
+            imgpath='empty';
         }
-        var imgpath=file[0].path; //업로드할 이미지 경로
-                console.log(imgpath);
-        
-
+    
         if(database){
                 updateBookmark(database,paramFolder,paramUpdateName,paramUrl,paramName,imgpath,user,function(err,results){
                 console.log('updated:',results);

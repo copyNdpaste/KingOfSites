@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <%include template/head%>
+    </head>
+    <header>
+        <%if(user){%>
+            <%include template/headerlogout%>
+        <%}else{%>
+            <%include template/headerlogin%>
+        <%}%>
+        <title>00사이트</title>
+    </header>
+    <body>
+        <div class="jumbotron">
+            <h1>00사이트</h1>
+            <p>00 사이트 간략 소개</p>
+            <div class="row">
+                <%for(var i=0;i<getjob.length;i++){%>
+                <div class="card">
+                    <div class="card-header"><%=getjob[i].name%></div>
+                    <div class="card-body">
+                        <p class="card-text"><%=getjob[i].explain%></p>
+                        <div class="btn-group">
+                            <a href="<%=getjob[i].url%>" class="btn btn-primary btn-rounded" target="_blank">Enter</a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <%include template/footer%>
+    </body>
+</html>
