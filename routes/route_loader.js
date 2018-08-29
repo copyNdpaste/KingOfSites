@@ -16,11 +16,11 @@ var static=require('serve-static');
 var path=require('path');
 
 var storage=multer.diskStorage({
-    destination:'/uploads'/*function(req,file,callback){
-        callback(null,'uploads')
-    }*/,
+    destination:/*'/uploads'*/function(req,file,callback){
+        callback(null,'uploads');
+    },
     filename:function(req,file,callback){
-        callback(null,file.originalname)
+        callback(null,file.originalname);
         //callback(null,file.name)
     }
 });
@@ -58,15 +58,18 @@ function initRoutes(app, router) {
             if(curItem.method=='images'||curItem.method=='siteinsert'||curItem.method=='siteupdate'){ //이미지 저장하는 함수인 경우
                 console.log('route post2');
                 //file이 비어 있으면 continue...?
-                router.route(curItem.path).post(upload.array('bookmarkImg',1),curModule[curItem.method]);
-                console.log(router.route(curItem.path).post(upload.array('bookmarkImg',1),curModule[curItem.method]));
+                //console.log(files[0]);
+                
+                //router.route(curItem.path).post(upload.array('bookmarkImg',1),curModule[curItem.method]);
+                router.route(curItem.path).post(upload.any('bookmarkImg'),curModule[curItem.method]);
+                console.log(router.route(curItem.path).post(upload.any('bookmarkImg'),curModule[curItem.method]));
                 console.log('route post3');
             }else{
                 router.route(curItem.path).post(curModule[curItem.method]);
             }
-		} else {
+		} /*else {
 			router.route(curItem.path).post(curModule[curItem.method]);
-		}
+		}*/
 		console.log('라우팅 모듈 [%s]이(가) 설정됨.', curItem.method);
 	}
     // 라우터 객체 등록

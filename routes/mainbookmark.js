@@ -34,7 +34,7 @@ var mainbookmark=function(req,res){//네비에서 mainbookmark 클릭되면 main
         });
     }
 };
-var findsites=function(req,res){
+/*var findsites=function(req,res){
     var database=req.app.get('database');
     console.log('findsites 호출됨');
     database.FolderModel.find({},function(err,sites){
@@ -45,7 +45,7 @@ var findsites=function(req,res){
             console.log('아무 것도 못찾음'); //DB에 값 없을 때 출력
         }
     });
-};
+};*/
 var addFolder=function(database,foldername,userid,callback){
     console.log('addFoler 호출됨: '+foldername+', '+userid);
     database.FolderModel.find({foldername:foldername,userid:userid},function(err,results){
@@ -142,4 +142,4 @@ module.exports.mainbookmark=mainbookmark;
 module.exports.createfolder=createfolder;
 module.exports.distinctfolder=distinctfolder;
 module.exports.findfolder=findfolder;
-module.exports.findsites=findsites;
+///module.exports.findsites=findsites;

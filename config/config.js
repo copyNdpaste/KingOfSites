@@ -24,14 +24,14 @@ module.exports = {
         {file:'./bookmark',path:'/process/howto',method:'howto',type:'get'},
 
         {file:'./mainbookmark',path:'/process/mainbookmark',method:'mainbookmark',type:'get'},//메인
-        {file:'./mainbookmark',path:'/process/findsites',method:'findsites',type:'get'},
+       // {file:'./mainbookmark',path:'/process/findsites',method:'findsites',type:'get'},
         {file:'./mainbookmark',path:'/process/createfolder',method:'createfolder',type:'post'},
         
         {file:'./deletefolder',path:'/process/deletefolder',method:'deletefolder',type:'post'},
         
         {file:'./recommend',path:'/process/recsites',method:'showrec',type:'get'},
         
-        {file:'./getjob',path:'/process/sites',method:'getjob',type:'get'}
+        {file:'./sites',path:'/process/sites',method:'sites',type:'get'}
 	],
 	facebook: {		// passport facebook
 		clientID: '196604394366966',

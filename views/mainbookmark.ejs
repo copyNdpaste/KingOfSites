@@ -45,7 +45,7 @@
                                                     <div class="card-body">
                                                         <p class="card-text">여기에 사용자가 작성한 "사이트에 대한 설명"이 들어감</p>
                                                         <div class="btn-group">
-                                                            <a href="<%=sites[j].bmurl%>" class="btn btn-primary btn-rounded" id="<%=sites[j].bmurl%>">Enter</a>
+                                                            <a href="<%=sites[j].bmurl%>" class="btn btn-primary btn-rounded" id="<%=sites[j].bmurl%>" target="_blank">Enter</a>
                                                             <button data-target="#adjustModalForm" class="btn btn-info btn-rounded foradjustmodal" data-toggle="modal" data-folder="<%=sites[j].foldername%>" data-name="<%=sites[j].bmname%>" data-url="<%=sites[j].bmurl%>" data-image="<%=sites[j].bmimage%>">Adjust</button>
                                                             <form action="/process/del" method="post">
                                                                 <input type="hidden" value="<%=sites[j].foldername%>" name="fname"/>
@@ -54,7 +54,7 @@
                                                             </form>
                                                         </div>
                                                     </div>
-                                                    <img class="card-img-bottom" src="..<%=sites[j].bmimage%>" alt="Card image" style="width:100%">
+                                                    <img class="card-img-bottom" src="/<%=sites[j].bmimage%>" alt="Card image" style="width:100%">
                                                 </div>
                                             </div>
                                         <%}

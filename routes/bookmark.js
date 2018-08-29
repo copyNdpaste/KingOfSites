@@ -110,12 +110,12 @@ var viewer=function(req,res){
     console.log('mainpage 호출됨');
     res.render('addbookmark',{user:req.user});
 };
-*/
+*//*
 var navtest=function(req,res){
     console.log('navtest 호출됨');
     res.render('navtest',{user:req.user});
 }
-
+*/
 
 /*
 var addbookmark=function(req,res){
@@ -209,7 +209,7 @@ var howto=function(req,res){
 module.exports.images=images;
 //module.exports.viewer=viewer;
 //module.exports.mainpage=mainpage;
-module.exports.navtest=navtest;
+//module.exports.navtest=navtest;
 module.exports.del=del;
 module.exports.about=about;
 module.exports.howto=howto;

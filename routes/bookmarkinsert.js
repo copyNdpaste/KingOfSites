@@ -36,7 +36,9 @@ var siteinsert=function(req, res){
         var imgpath;
         console.log('url: ',paramUrl,'folder: ',paramFolderName,'name: ',paramName,'id: ',user);
         console.log('file정보: ');
+        console.dir(file[0]);
         console.log(file.length);
+        console.log(file[0].path);
         if(file.length!=0){
             console.log('file not empty');
             imgpath=file[0].path; //업로드할 이미지 경로
